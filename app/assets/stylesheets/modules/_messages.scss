@@ -17,7 +17,7 @@
     &__name {
       color: white;
       font-size: 16px;
-      margin: 0 20px;
+      margin: 0 15px;
     }
     &__edit a {
       color: white;
@@ -34,6 +34,17 @@
   &__group {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
+    &__name {
+      margin: 0 30px 5px 30px;
+      color: white;
+      padding-top: 20px;
+      font-size: 15px;
+    }
+    &__message {
+      margin: 0 30px 40px 30px;
+      color: white;
+      font-size: 11px;
+    }
   }
 }
 
@@ -44,19 +55,94 @@
 .chat-main {
   height: 100vh;
   width: calc(100% - 300px);
-  background-color: gray;
+  background-color: white;
   justify-content: space-between;
   &__top {
   height: 100px;
   background-color: white;
   border-bottom: #eeeeee;
+  margin: 0 40px;
+  position: relative;
+
+    &__group {
+      font-size: 20px;
+      position: absolute;
+      top: 35px;
+    }
+    &__member {
+      font-size: 12px;
+      position: absolute;
+      bottom: 0;
+      color: #999999;
+    }
+    &__edit a{
+      float: right;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      color: #38aef0;
+      border: 1px solid;
+      padding: 5px 20px;
+      text-decoration: none;
+    }
   }
   &__content {
     height: calc(100vh - 190px);
     background-color: #fafafa;
+    padding: 35px 40px 46px 40px;
+    &__message {
+      display: flex;
+      position: relative;
+      height: 50px;
+      &__name {
+        font-size: 16px;
+        position: absolute;
+        top: 0;
+      }
+      &__date{
+        font-size: 12px;
+        color: #999999;
+        margin-bottom: 12px;
+        position: absolute;
+        left: 50px;
+      }
+      &__text {
+        position: absolute;
+        bottom: 0;
+        font-size: 14px;
+        color: #434a54;
+      }
+  
+    }
   }
   &__footer {
     height: 90px;
     background-color: #d2d2d2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    &__input {
+      height: 50px;
+      width: calc(100% - 100px);
+      position: relative;
+      &__image i {
+        font-size: 30px;
+        position: absolute;
+        right: 110px;
+        top: 10px;        
+      }
+      
+    }
+    &__submit {
+      height: 50px;
+      width: 100px;
+      background-color: #38aef0;
+      color: white;
+      border-radius: 5px;
+    }
   }
+}
+.input-box__input__image__file {
+  display: none;
 }
