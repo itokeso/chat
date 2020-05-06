@@ -11,7 +11,11 @@
 
 
   .side-bar__group
-    .side-bar__group__name techcamp
+    .side-bar__group__name 
+      - current_user.groups.each do |group|
+        .side-bar__group__name__group
+          = link_to edit_group_path(group.id) do
+            = group.name
     .side-bar__group__message メッセージはまだありません
-    
+
     

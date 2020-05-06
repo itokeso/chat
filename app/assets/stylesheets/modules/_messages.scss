@@ -39,6 +39,10 @@
       color: white;
       padding-top: 20px;
       font-size: 15px;
+      &__group a {
+        text-decoration: none;
+        color: white;
+      }
     }
     &__message {
       margin: 0 30px 40px 30px;
