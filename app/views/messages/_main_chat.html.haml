@@ -1,21 +1,25 @@
 .chat-main
   .chat-main__top
-    .chat-main__top__group techcamp
+    .chat-main__top__group 
+      = @group.name
     .chat-main__top__edit  
-      =link_to "Edit" ,"#" 
-    .chat-main__top__member member ito sato
+      =link_to "Edit" , edit_group_path(@group)
+    .chat-main__top__member 
+      member: 
+      - @group.users.each do |user|
+        = user.name
   .chat-main__content
     .chat-main__content__message 
-      .chat-main__content__message__name 伊藤
-      .chat-main__content__message__date 2020/03/03
-      .chat-main__content__message__text こんにちは
+      = render @messages
     
   .chat-main__footer
-    .chat-main__footer__input
-      %input{type: "text" ,class: "chat-main__footer__input", placeholder: "type a message"}
-        %label{class: "chat-main__footer__input__image"}
-          = icon('fas', 'image')
-          %input{type: "file",class:"input-box__input__image__file"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'chat-main__footer__input' , placeholder: 'type a message'
+      .form__mask
+        =f.label :image, class: 'chat-main__footer__input__image' do
+          = icon('fas', 'image', class: 'icon')
+          =f.file_field :image, class: 'input-box__input__image__file'
+      = f.submit 'Send', class: 'chat-main__footer__submit'
 
-    .chat-main__footer__submit
-      %input{type: "submit", value: "SEND" ,class: "chat-main__footer__submit"}
+
+    
