@@ -1,3 +1,4 @@
+
 .chat-main
   .chat-main__top
     .chat-main__top__group 
@@ -11,7 +12,7 @@
   .chat-main__content
     .chat-main__content__message 
       = render @messages
-    
+
   .chat-main__footer
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'chat-main__footer__input' , placeholder: 'type a message'
