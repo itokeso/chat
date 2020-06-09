@@ -20,7 +20,6 @@
 |データベース|MYSQL|
 
 # DEMO
-
 ![demo](https://raw.github.com/wiki/itokeso/chat/images/chat.gif)
 
 # DB設計
